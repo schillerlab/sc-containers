@@ -1,0 +1,10 @@
+name: sc-analysis
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+dependencies:
+  - defaults::python=3.8.2
+  - pip
+  - pip:
+    - scanpy
