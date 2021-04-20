@@ -5,6 +5,13 @@ channels:
   - bioconda
 dependencies:
   - defaults::python=3.8.2
-  - pip
+  - conda-forge::pip=21.0.1
+  - conda-forge::jupyterlab=3.0.14
+  - conda-forge::ipykernel=5.5.3
+  - conda-forge::leidenalg=0.8.4
+  - conda-forge::rich=10.1.0
+  - bioconda::scanpy=1.7.2
+  - bioconda::scvelo=0.2.3
   - pip:
-    - scanpy
+    - "git+https://github.com/theislab/diffxpy.git@master"
+      
