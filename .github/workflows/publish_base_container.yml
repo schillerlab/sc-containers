@@ -27,8 +27,7 @@ jobs:
           name: schillerlab/sc-containers
           username: zethson
           password: ${{ secrets.DOCKER_PASSWORD }}
-          context: base
-          file: base/Dockerfile
+          path: base
           push: true
           registry: ghcr.io
           tags: schillerlab/sc-container:latest
