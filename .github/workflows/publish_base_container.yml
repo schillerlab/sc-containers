@@ -1,8 +1,9 @@
-name: Build Full Docker Container
+name: Pubish Github container
 
 on:
   push:
-  pull_request:
+    branches:
+      - 'master'
 
 jobs:
   docker:
@@ -23,9 +24,13 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          name: schillerlab/sc-containers
+          username: zethson
+          password: ${{ secrets.DOCKER_PASSWORD }}
           context: full/1.0.0
           file: full/1.0.0/Dockerfile
-          push: false
+          push: true
+          registry: ghcr.io
           tags: schillerlab/sc-container:latest
 
       - name: Image digest

@@ -2,7 +2,6 @@ FROM jupyter/minimal-notebook:latest
 
 # Copy required files
 COPY start.sh .
-COPY environment.yml .
 
 # Switch to root to install packages & configure permissions
 USER root
@@ -23,13 +22,3 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 
 # Switch back to non-privileged user
 USER jovyan
-
-# Create the environment
-RUN conda env create -f environment.yml && conda clean -a
-
-# Activate the environments
-RUN echo "source activate sc-analysis" >> ~/.bashrc
-ENV PATH /home/user/miniconda/envs/sc-analysis/bin:$PATH
-
-# Dump the details of the installed packages to a file for posterity
-RUN conda env export --name sc-analysis > sc-analysis_environment.yml
