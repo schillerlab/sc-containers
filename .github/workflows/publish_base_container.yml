@@ -28,9 +28,8 @@ jobs:
           username: zethson
           password: ${{ secrets.DOCKER_PASSWORD }}
           path: base
-          push: true
           registry: ghcr.io
-          tags: schillerlab/sc-container:latest
+          tags: latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
