@@ -1,4 +1,4 @@
-name: Pubish Github container
+name: Publish Github container
 
 on:
   push:
@@ -27,8 +27,8 @@ jobs:
           name: schillerlab/sc-containers
           username: zethson
           password: ${{ secrets.DOCKER_PASSWORD }}
-          context: full/1.0.0
-          file: full/1.0.0/Dockerfile
+          context: base
+          file: base/Dockerfile
           push: true
           registry: ghcr.io
           tags: schillerlab/sc-container:latest
